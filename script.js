@@ -24,3 +24,21 @@ for (let n = 1; n <= 100; n++) {
     }
 
 }
+
+// selezionare l'elemento del documento nel quale si vuole andare ad inserire numeri da 1 a 100
+const containerSquares = document.querySelector("#container");
+for (n = 1; n <= 100; n++) {
+    let element;
+    if ((n % 3 == 0) && (n % 5 == 0)) {
+        // aggiungo elemento in DOM con rispettive classi
+        element = `<div class="square fizz-buzz">${divisibleBy3}
+        ${divisibleBy5}</div>`;
+    } else if (n % 3 == 0) {
+        element = `<div class="square fizz">${divisibleBy3}</div>`;
+    } else if (n % 5 == 0) {
+        element = `<div class="square buzz">${divisibleBy5}</div>`
+    } else {
+        element = `<div class="square">${n}</div>`
+    }
+    containerSquares.innerHTML += element;
+}
